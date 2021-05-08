@@ -26,74 +26,75 @@ def game():
     
         move = input("\nWhen ready, player " + turn + " it is your go, enter your move between 1-9\n")
         
-        except KeyError:
-            print("You chose the wrong type of input, try a number between 1 and 9!")
-        
-        if theBoard[move] == " ":
-            theBoard[move] = turn
-            count += 1
-        else:
-            print("\nSorry, that cell is full! Please choose a new cell")
-            
-        if count >= 5:
-            
-            if theBoard["7"] == theBoard["8"] == theBoard["9"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-    
-            if theBoard["4"] == theBoard["5"] == theBoard["6"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["1"] == theBoard["2"] == theBoard["3"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["1"] == theBoard["4"] == theBoard["7"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["2"] == theBoard["5"] == theBoard["8"] != " ":
-                
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["3"] == theBoard["6"] == theBoard["9"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-            
-            if theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":
-                printboard(theBoard)
-                print("\nGame over, player " + turn + " won the game!")
-                
-                break
-       
-        if count == 9:
-            print("The game is over.... its a tie!")
-            
-        else:
-            if turn == "X":
-                turn = "0"
+        try:
+            if theBoard[move] == " ":
+                theBoard[move] = turn
+                count += 1
             else:
-                turn = "X"
+                print("\nSorry, that cell is full! Please choose a new cell")
+                
+        except KeyError:
+            print("You used the wrong entry type, use a number between 1 and 9.")    
+                
+            if count >= 5:
+                
+                if theBoard["7"] == theBoard["8"] == theBoard["9"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+        
+                if theBoard["4"] == theBoard["5"] == theBoard["6"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["1"] == theBoard["2"] == theBoard["3"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["1"] == theBoard["4"] == theBoard["7"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["2"] == theBoard["5"] == theBoard["8"] != " ":
+                    
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["3"] == theBoard["6"] == theBoard["9"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["1"] == theBoard["5"] == theBoard["9"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+                
+                if theBoard["7"] == theBoard["5"] == theBoard["3"] != " ":
+                    printboard(theBoard)
+                    print("\nGame over, player " + turn + " won the game!")
+                    
+                    break
+           
+            if count == 9:
+                print("The game is over.... its a tie!")
+                
+            else:
+                if turn == "X":
+                    turn = "0"
+                else:
+                    turn = "X"
                 
     restart = input("\nDo you want to restart the game? (y/n)")
     if restart == "Y" or restart == "y":
@@ -102,4 +103,4 @@ def game():
             game()
             
 if __name__ == "__main__":
-    game()
+    game()            
